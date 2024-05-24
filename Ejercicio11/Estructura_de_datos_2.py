@@ -9,7 +9,7 @@ def show_menu():
 # Agregar Persona
 
 def agregar_persona(agenda):
-    dni = input("Ingrese el DNI: ").strip()
+    dni = input("\nIngrese el DNI: ").strip()
     if dni in agenda:
         print("La persona con este DNI ya existe.")
     else:
@@ -28,7 +28,7 @@ def agregar_persona(agenda):
 # Modificar Persona
 
 def modificar_persona(agenda):
-    dni = input("Ingrese el DNI de la persona a modificar: ").strip()
+    dni = input("\nIngrese el DNI de la persona a modificar: ").strip()
     if dni in agenda:
         print(f"Datos actuales: {agenda[dni]}")
         cambiar = input("¿Desea cambiar el apellido? (y/n): ").strip().lower()
@@ -54,7 +54,7 @@ def modificar_persona(agenda):
 # Eliminar Persona
 
 def eliminar_persona(agenda):
-    dni = input("Ingrese el DNI de la persona a eliminar: ").strip()
+    dni = input("\nIngrese el DNI de la persona a eliminar: ").strip()
     if dni in agenda:
         del agenda[dni]
         print("Persona eliminada con éxito.")
@@ -65,8 +65,9 @@ def eliminar_persona(agenda):
 
 def mostrar_agenda(agenda):
     if not agenda:
-        print("La agenda está vacía.")
+        print("\nLa agenda está vacía.")
     else:
+        print("\nAgenda:")
         for dni, datos in agenda.items():
             print(f"DNI: {dni}, Datos: {datos}")
 
@@ -76,7 +77,7 @@ def main():
     agenda = {}
     while True:
         show_menu()
-        opcion = input("Seleccione una opción: ").strip()
+        opcion = input("\nSeleccione una opción: ").strip()
         if opcion == '1':
             agregar_persona(agenda)
         elif opcion == '2':
@@ -89,7 +90,7 @@ def main():
             print("Saliendo del programa.")
             break
         else:
-            print("Opción no válida. Por favor, intente de nuevo.")
+            print("\nOpción no válida. Por favor, intente de nuevo.")
 
 if __name__ == "__main__":
     main()
